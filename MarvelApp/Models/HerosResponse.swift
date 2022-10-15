@@ -30,17 +30,4 @@ struct Character:Codable, Identifiable {
 //    let series: Serie
 }
 
-// MARK: - Thumbnail
-struct Thumbnail: Codable {
-    let path: String
-    let thumbnailExtension: String
-    
-    var completePath:String{
-        return path + "/landscape_xlarge" + "." + thumbnailExtension
-    }
 
-    enum CodingKeys: String, CodingKey {
-        case path
-        case thumbnailExtension = "extension"
-    }
-}

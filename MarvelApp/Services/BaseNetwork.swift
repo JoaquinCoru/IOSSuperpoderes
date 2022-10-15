@@ -26,6 +26,7 @@ struct HTTPMethods{
 
 enum endpoints:String {
     case characters = "/characters"
+    case series = "/series"
 }
 
 
@@ -35,6 +36,15 @@ struct BaseNetwork{
     func getMarvelCharacters() -> URLRequest{
         let urlCad:String = "\(server)\(endpoints.characters.rawValue)?apikey=\(apiKey)&ts=\(ts)&hash=\(hash)&orderBy=-modified"
                 
+        var request = URLRequest(url: URL(string: urlCad)!)
+        request.httpMethod = HTTPMethods.get
+        
+        return request
+    }
+    
+    func getCharacterSeries(idCharacter:Int) -> URLRequest {
+        let urlCad:String = "\(server)\(endpoints.characters.rawValue)/\(idCharacter)\(endpoints.series.rawValue)?apikey=\(apiKey)&ts=\(ts)&hash=\(hash)&orderBy=-modified"
+        
         var request = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HTTPMethods.get
         
