@@ -16,7 +16,9 @@ struct RootView: View {
             LoaderView()
         case Status.loaded:
             HerosView()
-                .environmentObject(RootViewModel(testing: true))
+                .environmentObject(RootViewModel())
+        case Status.error:
+            Text("Error")
         }
         
     }

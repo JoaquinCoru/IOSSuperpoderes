@@ -43,6 +43,6 @@ struct HerosRowView: View {
 
 struct HerosRowView_Previews: PreviewProvider {
     static var previews: some View {
-        HerosRowView(hero: Character(id: UUID(), name: "Hit-Monkey", resultDescription: "", modified: Date(), thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"), resourceURI: ""))
+        HerosRowView(hero: Character(id: 1, name: "Hit-Monkey", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"), resourceURI: ""))
     }
 }

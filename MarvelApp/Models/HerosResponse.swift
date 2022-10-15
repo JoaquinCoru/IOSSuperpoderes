@@ -23,9 +23,8 @@ struct DataClass: Codable {
 
 
 struct Character:Codable, Identifiable {
-    let id: UUID
-    let name, resultDescription: String
-    let modified: Date
+    let id: Int
+    let name, description: String
     let thumbnail: Thumbnail
     let resourceURI: String
 //    let series: Serie
