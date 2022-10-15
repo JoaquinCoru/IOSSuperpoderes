@@ -10,19 +10,16 @@ import SwiftUI
 struct HerosView: View {
     @EnvironmentObject var rootViewModel:RootViewModel
     
-    @StateObject var viewModel:HerosViewModel
-    
     var body: some View {
         NavigationStack{
             List{
-                if let heros = viewModel.heros{
+                if let heros = rootViewModel.heros{
                     ForEach(heros) { hero in
                         NavigationLink {
                             Text(hero.name)
                         } label: {
-                            Text(hero.name)
+                            HerosRowView(hero: hero)
                         }
-                        
                     }
                 }
             }
@@ -32,6 +29,8 @@ struct HerosView: View {
 
 struct HerosView_Previews: PreviewProvider {
     static var previews: some View {
-        HerosView(viewModel: HerosViewModel(testing: true))
+        HerosView()
+            .environmentObject(RootViewModel(testing: true))
+        
     }
 }

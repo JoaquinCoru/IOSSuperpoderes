@@ -15,7 +15,8 @@ struct RootView: View {
         case Status.loading:
             LoaderView()
         case Status.loaded:
-            Text("Lista heroes")
+            HerosView()
+                .environmentObject(RootViewModel(testing: true))
         }
         
     }
