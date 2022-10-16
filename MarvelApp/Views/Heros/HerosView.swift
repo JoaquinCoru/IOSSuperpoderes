@@ -16,7 +16,7 @@ struct HerosView: View {
                 if let heros = rootViewModel.heros{
                     ForEach(heros) { hero in
                         NavigationLink {
-                            SeriesView( characterName: hero.name, viewModel: SeriesViewModel(characterId: hero.id))
+                            SeriesRootView(characterName: hero.name, viewModel: SeriesViewModel(characterId: hero.id))
                         } label: {
                             HerosRowView(hero: hero)
                         }

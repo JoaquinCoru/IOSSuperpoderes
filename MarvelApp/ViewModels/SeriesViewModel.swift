@@ -43,8 +43,8 @@ final class SeriesViewModel:ObservableObject{
                 switch completion{
                 case .finished:
                     self.status = Status.loaded
-                case .failure:
-                    self.status = .error(error: "Error buscando Series")
+                case .failure(let error):
+                    self.status = .error(error: "Error buscando Series \(error.localizedDescription)")
                 }
             } receiveValue: { data in
                 self.series  = data.data.results

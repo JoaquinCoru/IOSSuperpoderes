@@ -15,7 +15,6 @@ let ts = "1"
 let server = "https://gateway.marvel.com/v1/public"
 
 
-
 struct HTTPMethods{
     static let post = "POST"
     static let get = "GET"

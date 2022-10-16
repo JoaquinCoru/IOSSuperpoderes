@@ -40,6 +40,9 @@
 		D2BCC20828F746B100CBFEC4 /* HerosRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BCC20728F746B100CBFEC4 /* HerosRowView.swift */; };
 		D2BCC20928F746B100CBFEC4 /* HerosRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BCC20728F746B100CBFEC4 /* HerosRowView.swift */; };
 		D2BCC20A28F746B100CBFEC4 /* HerosRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BCC20728F746B100CBFEC4 /* HerosRowView.swift */; };
+		D2CB45AF28FC2D950066CCC1 /* SeriesRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CB45AE28FC2D950066CCC1 /* SeriesRootView.swift */; };
+		D2CB45B128FC5CB10066CCC1 /* ErrorHerosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CB45B028FC5CB10066CCC1 /* ErrorHerosView.swift */; };
+		D2CB45B328FC636A0066CCC1 /* ErrorSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CB45B228FC636A0066CCC1 /* ErrorSeriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		D2BCC20328F7317000CBFEC4 /* HerosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosResponse.swift; sourceTree = "<group>"; };
 		D2BCC20728F746B100CBFEC4 /* HerosRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosRowView.swift; sourceTree = "<group>"; };
 		D2BCC20B28F748F800CBFEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D2CB45AE28FC2D950066CCC1 /* SeriesRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRootView.swift; sourceTree = "<group>"; };
+		D2CB45B028FC5CB10066CCC1 /* ErrorHerosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHerosView.swift; sourceTree = "<group>"; };
+		D2CB45B228FC636A0066CCC1 /* ErrorSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSeriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,13 +142,13 @@
 		D205CDFD28F6D580001EADC6 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
-				D2BCC20B28F748F800CBFEC4 /* Info.plist */,
-				D2BCC1E228F71C9D00CBFEC4 /* Models */,
-				D212A83928FACCF1008F0106 /* Services */,
-				D2BCC1E328F71CA700CBFEC4 /* Views */,
-				D2BCC1E428F71CB800CBFEC4 /* ViewModels */,
 				D205CDFE28F6D580001EADC6 /* MarvelApp.swift */,
 				D205CE0028F6D580001EADC6 /* Persistence.swift */,
+				D2BCC20B28F748F800CBFEC4 /* Info.plist */,
+				D212A83928FACCF1008F0106 /* Services */,
+				D2BCC1E228F71C9D00CBFEC4 /* Models */,
+				D2BCC1E328F71CA700CBFEC4 /* Views */,
+				D2BCC1E428F71CB800CBFEC4 /* ViewModels */,
 				D205CE0728F6D581001EADC6 /* Assets.xcassets */,
 				D205CE0928F6D581001EADC6 /* MarvelApp.entitlements */,
 				D205CE0228F6D580001EADC6 /* MarvelApp.xcdatamodeld */,
@@ -187,6 +193,7 @@
 		D212A83C28FAEF9F008F0106 /* Series */ = {
 			isa = PBXGroup;
 			children = (
+				D2CB45AE28FC2D950066CCC1 /* SeriesRootView.swift */,
 				D212A83F28FB15A8008F0106 /* SeriesView.swift */,
 				D212A84128FB1C87008F0106 /* SeriesRowView.swift */,
 			);
@@ -228,6 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				D2BCC1F628F72C0C00CBFEC4 /* LoaderView.swift */,
+				D2CB45B028FC5CB10066CCC1 /* ErrorHerosView.swift */,
+				D2CB45B228FC636A0066CCC1 /* ErrorSeriesView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -373,16 +382,19 @@
 			files = (
 				D2BCC1E628F7288700CBFEC4 /* RootViewModel.swift in Sources */,
 				D205CE0428F6D580001EADC6 /* MarvelApp.xcdatamodeld in Sources */,
+				D2CB45AF28FC2D950066CCC1 /* SeriesRootView.swift in Sources */,
 				D205CDFF28F6D580001EADC6 /* MarvelApp.swift in Sources */,
 				D2BCC20428F7317000CBFEC4 /* HerosResponse.swift in Sources */,
 				D2BCC1F728F72C0C00CBFEC4 /* LoaderView.swift in Sources */,
 				D2BCC20028F7300F00CBFEC4 /* SeriesViewModel.swift in Sources */,
+				D2CB45B128FC5CB10066CCC1 /* ErrorHerosView.swift in Sources */,
 				D212A83E28FAF28A008F0106 /* SeriesResponse.swift in Sources */,
 				D2BCC20828F746B100CBFEC4 /* HerosRowView.swift in Sources */,
 				D2BCC1E828F7292000CBFEC4 /* StatusModel.swift in Sources */,
 				D205CE0628F6D580001EADC6 /* RootView.swift in Sources */,
 				D212A83B28FACE72008F0106 /* BaseNetwork.swift in Sources */,
 				D212A84228FB1C87008F0106 /* SeriesRowView.swift in Sources */,
+				D2CB45B328FC636A0066CCC1 /* ErrorSeriesView.swift in Sources */,
 				D2BCC1FC28F72FA200CBFEC4 /* HerosView.swift in Sources */,
 				D205CE0128F6D580001EADC6 /* Persistence.swift in Sources */,
 				D212A84428FB1D42008F0106 /* Thumbnail.swift in Sources */,

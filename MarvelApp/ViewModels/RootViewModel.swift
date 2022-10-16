@@ -42,7 +42,7 @@ final class RootViewModel:ObservableObject{
                 case .finished:
                     self.status = Status.loaded
                 case .failure(let error):
-                    self.status = .error(error: "Error buscando Characters")
+                    self.status = .error(error: "Error buscando Characters: \(error.localizedDescription)")
                     print(String(describing: error))
                 }
             } receiveValue: { data in

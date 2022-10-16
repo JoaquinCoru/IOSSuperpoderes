@@ -10,7 +10,7 @@ import SwiftUI
 struct SeriesView: View {
     var characterName:String
 
-    @StateObject var viewModel:SeriesViewModel
+    @ObservedObject var viewModel:SeriesViewModel
     
     var body: some View {
         List{
