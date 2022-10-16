@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SeriesView: View {
+    var characterName:String
 
     @StateObject var viewModel:SeriesViewModel
     
@@ -19,11 +20,13 @@ struct SeriesView: View {
                 }
             }
         }
+        .navigationBarTitle("Series \(characterName)")
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
 struct SeriesView_Previews: PreviewProvider {
     static var previews: some View {
-        SeriesView(viewModel: SeriesViewModel(characterId: 1, testing: true))
+        SeriesView(characterName: "Captain Carter",viewModel: SeriesViewModel(characterId: 1, testing: true))
     }
 }

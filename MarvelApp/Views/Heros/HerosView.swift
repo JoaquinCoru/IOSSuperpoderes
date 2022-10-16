@@ -16,16 +16,18 @@ struct HerosView: View {
                 if let heros = rootViewModel.heros{
                     ForEach(heros) { hero in
                         NavigationLink {
-                            SeriesView( viewModel: SeriesViewModel(characterId: hero.id))
+                            SeriesView( characterName: hero.name, viewModel: SeriesViewModel(characterId: hero.id))
                         } label: {
                             HerosRowView(hero: hero)
                         }
                     }
                 }
             }
+
         }
     }
 }
+
 
 struct HerosView_Previews: PreviewProvider {
     static var previews: some View {
