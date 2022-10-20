@@ -20,6 +20,7 @@ struct SeriesView: View {
                 }
             }
         }
+
         .navigationBarTitle("Series \(characterName)")
         .navigationBarTitleDisplayMode(.large)
     }

@@ -24,9 +24,9 @@ final class RootViewModel:ObservableObject{
         }
     }
     
-    func getHeros(){
+    func getHeros(filterName:String = ""){
         
-        URLSession.shared.dataTaskPublisher(for: BaseNetwork().getMarvelCharacters())
+        URLSession.shared.dataTaskPublisher(for: BaseNetwork().getMarvelCharacters(filterName: filterName))
             .tryMap {
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else{

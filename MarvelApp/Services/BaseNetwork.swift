@@ -32,8 +32,12 @@ enum endpoints:String {
 struct BaseNetwork{
     
     
-    func getMarvelCharacters() -> URLRequest{
-        let urlCad:String = "\(server)\(endpoints.characters.rawValue)?apikey=\(apiKey)&ts=\(ts)&hash=\(hash)&orderBy=-modified"
+    func getMarvelCharacters(filterName:String = "") -> URLRequest{
+        var urlCad:String = "\(server)\(endpoints.characters.rawValue)?apikey=\(apiKey)&ts=\(ts)&hash=\(hash)&orderBy=-modified"
+        
+        if (filterName != "") {
+            urlCad.append("&nameStartsWith=\(filterName)")
+        }
                 
         var request = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HTTPMethods.get

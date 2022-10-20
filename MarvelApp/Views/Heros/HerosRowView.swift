@@ -17,15 +17,14 @@ struct HerosRowView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
-                    .padding([.top,.leading,.trailing], 20)
-                    .opacity(0.6)
+                    .padding([.leading,.trailing], 5)
 
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
-                    .padding([.leading,.trailing], 20)
+                    .padding([.leading,.trailing], 5)
                     .opacity(0.6)
                     .background(Color.gray)
             }
@@ -33,11 +32,13 @@ struct HerosRowView: View {
             Text("\(hero.name)")
                 .font(.title2)
                 .bold()
-                .padding(15)
+                .padding(10)
         }
-        .background(Color.gray)
+        .padding()
+        .background(Color.teal)
         .cornerRadius(10)
-        .padding(10)
+        
+
     }
 }
 
