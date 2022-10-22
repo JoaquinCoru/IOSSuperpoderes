@@ -10,7 +10,7 @@ import Combine
 
 final class RootViewModel:ObservableObject{
     @Published var heros:[Character]?
-    @Published var status = Status.loading
+    @Published var status:Status = Status.loading
     
     private var suscriptors = Set<AnyCancellable>()
     
@@ -42,7 +42,7 @@ final class RootViewModel:ObservableObject{
                 case .finished:
                     self.status = Status.loaded
                 case .failure(let error):
-                    self.status = .error(error: "Error buscando Characters: \(error.localizedDescription)")
+                    self.status = .error
                     print(String(describing: error))
                 }
             } receiveValue: { data in

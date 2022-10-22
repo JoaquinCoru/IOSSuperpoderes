@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import Combine
+@testable import MarvelApp
 
 final class RootViewModelTests: XCTestCase {
 
@@ -17,19 +19,39 @@ final class RootViewModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetHeros() throws {
+        var suscriptor = Set<AnyCancellable>()
+        
+        let expectation = self.expectation(description: "Descarga la lista de heroes")
+        
+        let vm = RootViewModel()
+        XCTAssertNotNil(vm)
+        
+        vm.$status.sink { estado in
+            //Cambia el estado
+            if estado == .loaded {
+                XCTAssertEqual(1, 1)
+                XCTAssertNotNil(vm.heros)
+                expectation.fulfill()
+            } else if estado == .error {
+                XCTAssertEqual(1, 2) //genero el error en el test
+            }
         }
+        .store(in: &suscriptor)
+        
+        //lanzamos la descarga de heroes
+        vm.getHeros()
+        
+        self.waitForExpectations(timeout: 10) //se esperan 10 segundos max. en la descarga
+
+    }
+    
+    func testGetHerosTesting(){
+        
+        let vm = RootViewModel(testing: true)
+        
+        XCTAssertNotNil(vm.heros)
+        XCTAssertEqual(vm.heros?[0].name, "Hit-Monkey")
     }
 
 }

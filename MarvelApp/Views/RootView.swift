@@ -16,8 +16,8 @@ struct RootView: View {
             LoaderView()
         case Status.loaded:
             HerosView()
-        case Status.error(error: let errorString):
-            ErrorHerosView(error: errorString)
+        case Status.error:
+            ErrorHerosView(error: "Error cargando personajes")
         }
         
     }

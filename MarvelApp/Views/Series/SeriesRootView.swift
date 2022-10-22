@@ -18,8 +18,8 @@ struct SeriesRootView: View {
             LoaderView()
         case Status.loaded:
             SeriesView(characterName: characterName, viewModel: viewModel)
-        case .error(error: let error):
-            ErrorSeriesView(error: error, seriesViewModel: viewModel)
+        case .error:
+            ErrorSeriesView(error: "Error cargando series", seriesViewModel: viewModel)
         }
     }
 }
