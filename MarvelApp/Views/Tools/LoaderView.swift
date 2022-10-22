@@ -25,9 +25,12 @@ struct LoaderView: View {
                 .onAppear{
                     animationValue = 60
                 }
+                .id(1)
+                
             Text("Cargando...")
                 .foregroundColor(.blue)
                 .font(.title2)
+                .id(2)
             
         }
         

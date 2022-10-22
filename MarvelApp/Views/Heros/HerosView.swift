@@ -36,10 +36,8 @@ struct HerosView: View {
                 }
 
             }
-            
 
         }
-    
       
     }
 }

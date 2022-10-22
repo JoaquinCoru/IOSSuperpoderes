@@ -27,6 +27,7 @@ struct SeriesRowView: View {
                     .padding([.leading, .trailing], 5)
                     .opacity(0.6)
             }
+            .id("image")
             
             Text("\(serie.title)")
                 .font(.title)
@@ -35,6 +36,7 @@ struct SeriesRowView: View {
                 .padding([.leading, .trailing], 10)
                 .background(.orange)
                 .opacity(0.7)
+                .id("text")
                 
         }
         .padding()

@@ -27,6 +27,7 @@ struct ErrorHerosView: View {
             Text(textError)
                 .foregroundColor(.red)
                 .font(.headline)
+                .id("Text")
             Spacer()
             Button {
                 //Volver al login...
@@ -48,8 +49,9 @@ struct ErrorHerosView: View {
     }
 }
 
-struct ErrorView_Previews: PreviewProvider {
+struct ErrorHerosView_Previews: PreviewProvider {
     static var previews: some View {
         ErrorHerosView(error: "Prueba de error")
+            .environmentObject(RootViewModel())
     }
 }

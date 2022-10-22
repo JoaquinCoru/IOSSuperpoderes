@@ -16,10 +16,13 @@ struct SeriesRootView: View {
             
         case Status.loading:
             LoaderView()
+                .id("LoaderView")
         case Status.loaded:
             SeriesView(characterName: characterName, viewModel: viewModel)
+                .id("SeriesView")
         case .error:
             ErrorSeriesView(error: "Error cargando series", seriesViewModel: viewModel)
+                .id("ErrorSeriesView")
         }
     }
 }

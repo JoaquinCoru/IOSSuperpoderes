@@ -28,11 +28,13 @@ struct HerosRowView: View {
                     .opacity(0.6)
                     .background(Color.gray)
             }
+            .id("image")
 
             Text("\(hero.name)")
                 .font(.title2)
                 .bold()
                 .padding(10)
+                .id("text")
         }
         .padding()
         .background(Color.teal)

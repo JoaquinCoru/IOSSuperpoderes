@@ -14,10 +14,13 @@ struct RootView: View {
         switch rootViewModel.status{
         case Status.loading:
             LoaderView()
+                .id("LoaderView")
         case Status.loaded:
             HerosView()
+                .id("HerosView")
         case Status.error:
             ErrorHerosView(error: "Error cargando personajes")
+                .id("ErrorHerosView")
         }
         
     }
