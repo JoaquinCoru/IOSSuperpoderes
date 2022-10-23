@@ -19,7 +19,6 @@ struct SeriesRowView: View {
                     .cornerRadius(10)
                     .padding([.leading, .trailing], 5)
                     .opacity(0.6)
-                    .frame(width:.infinity)
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
