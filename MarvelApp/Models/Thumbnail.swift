@@ -14,15 +14,15 @@ struct Thumbnail: Codable {
     
     var completePath:String{
         return path + "/landscape_xlarge."  + thumbnailExtension
-        //        return path + "/portrait_small."  + thumbnailExtension
+
     }
     
     var seriePath:String{
-#if os(watchOS)
-        return path + "/portrait_uncanny." + thumbnailExtension
-#else
-        return path + "/portrait_small." + thumbnailExtension
-#endif
+        #if os(watchOS)
+        return path + "/standard_xlarge." + thumbnailExtension
+        #else
+        return path + "/portrait_xlarge." + thumbnailExtension
+        #endif
     }
     
     enum CodingKeys: String, CodingKey {
