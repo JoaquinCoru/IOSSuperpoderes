@@ -30,13 +30,19 @@ struct SeriesRowView: View {
             .id("image")
             
             Text("\(serie.title)")
+            #if os(watchOS)
+                .font(.caption)
+                .lineLimit(2)
+            #else
                 .font(.title)
+            #endif
                 .multilineTextAlignment(.center)
                 .bold()
-                .padding([.leading, .trailing], 10)
+                .padding([.leading, .trailing], 8)
                 .background(.orange)
-                .opacity(0.7)
+                .opacity(0.8)
                 .id("text")
+                
                 
         }
         .padding()

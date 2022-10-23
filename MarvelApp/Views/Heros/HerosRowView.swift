@@ -11,6 +11,7 @@ struct HerosRowView: View {
     var hero:Character
     
     var body: some View {
+        
         VStack{
             AsyncImage(url: URL(string: hero.thumbnail.completePath)) { photoDownload in
                 photoDownload
@@ -18,7 +19,7 @@ struct HerosRowView: View {
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
                     .padding([.leading,.trailing], 5)
-
+                
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
@@ -29,9 +30,13 @@ struct HerosRowView: View {
                     .background(Color.gray)
             }
             .id("image")
-
+            
             Text("\(hero.name)")
+#if os(watchOS)
+                .font(.caption)
+#else
                 .font(.title2)
+#endif
                 .bold()
                 .padding(10)
                 .id("text")
@@ -40,7 +45,7 @@ struct HerosRowView: View {
         .background(Color.teal)
         .cornerRadius(10)
         
-
+        
     }
 }
 

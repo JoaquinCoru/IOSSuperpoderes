@@ -38,7 +38,7 @@ struct BaseNetwork{
             urlCad.append("&nameStartsWith=\(filterName)")
         }
                 
-        var request = URLRequest(url: URL(string: urlCad)!)
+        var request = URLRequest(url: (URL(string: urlCad) ?? URL(string: "https://www.google.com")!))
         request.httpMethod = HTTPMethods.get
         
         return request
